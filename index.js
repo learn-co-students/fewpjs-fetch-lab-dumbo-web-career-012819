@@ -1,4 +1,10 @@
+
+
+bodyTag = document.querySelector("body");
 function fetchBooks() {
+    fetch("https://anapioficeandfire.com/api/books")
+    .then(resp => resp.json())
+    .then(json => bodyTag.innerHTML += renderBooks(json))
 }
 
 function renderBooks(json) {
